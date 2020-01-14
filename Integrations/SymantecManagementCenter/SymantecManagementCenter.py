@@ -76,7 +76,8 @@ def http_request(method, path, params=None, data=None):
     except Exception:
         if res.status_code == 204:
             return res
-        return_error('Failed parsing the response from Symantec MC API: {}'.format(res.content))
+        return_error('Failed parsing the response'   # type: ignore[str-bytes-safe]
+                     ' from Symantec MC API: {}'.format(res.content))
 
 
 def verify_policy_content(content_type, ips, categories, urls):

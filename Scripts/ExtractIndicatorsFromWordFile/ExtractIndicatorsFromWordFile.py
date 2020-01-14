@@ -10,7 +10,7 @@ from docx.opc.exceptions import PackageNotFoundError
 class WordParser:
 
     def __init__(self):
-        self.res = []   # type: List[Dict[str, str]]
+        self.res = []   # type: Union[dict, List[Dict[str, str]]]
         self.errEntry = {
             "Type": entryTypes["error"],
             "ContentsFormat": formats["text"],
